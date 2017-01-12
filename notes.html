@@ -1,0 +1,24 @@
+
+NODE TYPESCRIPT
+install ts-node -D (to auto transpile and run .ts files)
+add to package.json:
+    "start": "./node_modules/.bin/ts-node ./server/server.ts",
+
+SEQUALIZE
+npm install sequelize -S
+npm install @types/sequelize -D
+
+EXPRESS
+npm install express -S 
+npm install @types/express -D
+
+SECURITY 
+never return an array of data (json injection / highjacking), wrap it in an object
+
+HOT RELOADING OF SERVER
+npm install nodemon -D
+add to package.json:
+    "watch": "./node_modules/.bin/nodemon -w . --ext \".ts\" --exec \"npm run start\""
+
+TOOLS
+install chrome extension JSONView
