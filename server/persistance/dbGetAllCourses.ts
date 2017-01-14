@@ -1,9 +1,13 @@
-import { CourseModel } from '../models/models';
+import * as Bluebird from "bluebird";
 
-export function dbGetAllCourses() {
-    
+import { CourseModel } from '../models/models';
+import { Course, createCourseFromDbModel } from '../../shared//model';
+
+export function dbGetAllCourses() : Bluebird<Course[]> {
+   
     return CourseModel.findAll({
-       order: ['seqNo']
-    });
+            order: ['seqNo']
+        })
+       .then(items => items.map(createCourseFromDbModel) );
 
 }

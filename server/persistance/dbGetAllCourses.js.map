@@ -1,0 +1,1 @@
+{"version":3,"file":"dbGetAllCourses.js","sourceRoot":"","sources":["dbGetAllCourses.ts"],"names":[],"mappings":";AAEA,6CAA+C;AAC/C,+CAAsE;AAEtE;IAEI,MAAM,CAAC,oBAAW,CAAC,OAAO,CAAC;QACnB,KAAK,EAAE,CAAC,OAAO,CAAC;KACnB,CAAC;SACF,IAAI,CAAC,KAAK,IAAI,KAAK,CAAC,GAAG,CAAC,+BAAuB,CAAC,CAAE,CAAC;AAE3D,CAAC;AAPD,0CAOC"}

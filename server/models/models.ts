@@ -21,7 +21,7 @@ export const CourseModel = initCourseModel(sequelize);
 
 export const LessonModel = initLessonModel(sequelize);
 
-CourseModel.hasMany(LessonModel, {as: "lessons", foreignKey: "courseId"});
+CourseModel.hasMany(LessonModel, {foreignKey: "courseId"});
 
 LessonModel.belongsTo(CourseModel, {foreignKey: "courseId"});
 

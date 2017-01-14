@@ -1,0 +1,14 @@
+<p *ngIf="course" (click)="onClick()">
+  {{course?.description}}
+</p>
+<div *ngIf="showDetail">
+  hello...
+  <div *ngIf="courseDetail.lessons < 1">
+    Nothing to see... move along.
+  </div>
+  <div *ngIf="courseDetail.lessons > 0">
+    <div *ngFor="let lesson of courseDetail.lessons">
+     {{lesson.description}}
+    </div>
+  </div>
+</div>

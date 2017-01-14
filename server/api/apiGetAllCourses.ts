@@ -1,12 +1,14 @@
 import { RequestHandler, Request, Response } from "express"
+import * as _ from 'lodash';
 
-import { apiOnError, apiOnSuccess } from '../api';
+import { apiOnError, apiOnSuccess, apiOnDatabaseError } from '../api';
 import { dbGetAllCourses } from '../persistance';
 
 export const apiGetAllCourses: RequestHandler = function (req: Request, res: Response) {
 
     dbGetAllCourses()
-        .then( (data: any) => apiOnSuccess(res, data) )
-        .catch( (err: any) => apiOnError(res, "Find all courses failed", err) );
+        .then(_.partial(apiOnSuccess, res))
+        .catch(_.partial(apiOnDatabaseError, res))
+        .catch(_.partial(apiOnError, res, "Find all courses failed"));
 
 }
